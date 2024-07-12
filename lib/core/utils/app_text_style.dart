@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -27,7 +26,11 @@ TextStyle semiBold({
   required Color color,
   required double fontSize,
 }) =>
-    _textStyle(color: color, fontSize: fontSize, fontWeight: FontWeight.w600);
+    _textStyle(
+      color: color,
+      fontSize: fontSize,
+      fontWeight: FontWeight.w600,
+    );
 
 TextStyle regularStyle({
   required Color color,
