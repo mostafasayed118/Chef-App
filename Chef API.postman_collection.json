@@ -1,0 +1,835 @@
+{
+	"info": {
+		"_postman_id": "2655e8f0-8138-430f-a36e-28582f760ff0",
+		"name": "Chef API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22331693"
+	},
+	"item": [
+		{
+			"name": "chef",
+			"item": [
+				{
+					"name": "sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Anas",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "1101459565",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "anas.route@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "anas123",
+									"type": "text"
+								},
+								{
+									"key": "confirmPassword",
+									"value": "anas123",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "{\"name\":\"methalfa\",\"address\":\"meet halfa\",\"coordinates\":[1214451511,12541845]}",
+									"type": "text"
+								},
+								{
+									"key": "brandName",
+									"value": "anasChef",
+									"type": "text"
+								},
+								{
+									"key": "minCharge",
+									"value": "150",
+									"type": "text"
+								},
+								{
+									"key": "disc",
+									"value": "anas mohamed gooooooooood",
+									"type": "text"
+								},
+								{
+									"key": "healthCertificate",
+									"type": "file",
+									"src": "/E:/Second_Term/desktop/new/Work/Images/random/bath.png"
+								},
+								{
+									"key": "frontId",
+									"type": "file",
+									"src": "/E:/Second_Term/desktop/new/Work/Images/random/images.jpg"
+								},
+								{
+									"key": "backId",
+									"type": "file",
+									"src": "/E:/Second_Term/desktop/new/Work/Images/random/bg.jpg"
+								},
+								{
+									"key": "profilePic",
+									"type": "file",
+									"src": "/E:/Second_Term/desktop/new/Work/Images/random/chef-2.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/chef/signup",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"chef",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"anas.route@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/chef/check-email",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"chef",
+								"check-email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ammarfathy516@gmail.com\",\r\n    \"password\": \"anas123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/chef/signin",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"chef",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget pass send code",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"anas.route@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/chef/send-code",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"chef",
+								"send-code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget pass change",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"anas.route@gmail.com\",\r\n    \"password\": \"anas123\",\r\n    \"confirmPassword\":\"anas123\",\r\n    \"code\":\"657516\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/chef/change-forgotten-password",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"chef",
+								"change-forgotten-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "FOODAPI eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODA3ODg4OGFmMmNlYzA2YmI0YzNlYSIsImVtYWlsIjoiYW5hcy5yb3V0ZUBnbWFpbC5jb20iLCJuYW1lIjoiQW5hcyIsImlhdCI6MTY4NjE0NzA1Mn0.NRPSGFyVNgwmbxxSaIddgJCC2v-XTHM4YoD1EQ654LM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPass\":\"anas1234\" ,\r\n    \"newPass\":\"anas123\",\r\n    \"confirmPassword\":\"anas123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/chef/change-password",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"chef",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update chef",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "FOODAPI eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OThkOGQ5NjMzODViM2Y5YTBiY2YzYyIsImVtYWlsIjoiYW5hczQyMzk5OUBnbWFpbC5jb20iLCJuYW1lIjoidGVzdHBob25lIiwiaWF0IjoxNjg3Nzg1MzY0fQ.OLZ9pcAG0ADK4_DjCXa_d79FJ-9CafszdKHlXU_Lca8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Anas",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "1101459565",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "{\"name\":\"Egypt\",\"address\":\"meet halfa\",\"coordinates\":[1214451511,12541845]}",
+									"type": "text"
+								},
+								{
+									"key": "brandName",
+									"value": "chefAnas",
+									"type": "text"
+								},
+								{
+									"key": "minCharge",
+									"value": "150",
+									"type": "text"
+								},
+								{
+									"key": "disc",
+									"value": "gooooooooooooooooooooooooooooooooooooood",
+									"type": "text"
+								},
+								{
+									"key": "profilePic",
+									"type": "file",
+									"src": "/C:/Users/meroOo/Desktop/Screenshot 2023-08-12 111905.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/chef/update",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"chef",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete chef",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "FOODAPI eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OTc4OWQ3NjliZDJjMzZkY2UxNTk3OSIsImVtYWlsIjoiYW5hczQyMzk5OUBnbWFpbC5jb20iLCJuYW1lIjoidGVzdF9tYWlsIiwiaWF0IjoxNjg3NjU0NzI3fQ.l3bmWVLGeVvKVme5xVvBSYnil-gGLmND-90tu4SCTj0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{baseURL}}/chef/delete?id=649789d769bd2c36dce15979",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"chef",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "649789d769bd2c36dce15979"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change chef status",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "FOODAPI eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODEwZWI3ZDE3NGJmZTU0ZmNlOTI2NyIsImVtYWlsIjoiYW5hcy5yb3V0ZUBnbWFpbC5jb20iLCJuYW1lIjoiQW5hcyIsImlhdCI6MTY4NzY1NTkzNH0.hJt8N6XbJ6jQWGXcpoGHdaTR7sRJVCcnDGAs6Zoa_vA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{baseURL}}/chef/change-chef-status",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"chef",
+								"change-chef-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get chef data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "FOODAPI eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZDc0MGVmNjBkMzJhODk3YzZkZmJkZiIsImVtYWlsIjoiYW1tYXJmYXRoeTUxNkBnbWFpbC5jb20iLCJuYW1lIjoiQW5hcyIsImlhdCI6MTY5MTgzNDMxMH0.wgSUP7ph_3Pjv145OQ2Z1gttRMI2eWUReJmHK_v8NQo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/chef/get-chef/64d740ef60d32a897c6dfbdf",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"chef",
+								"get-chef",
+								"64d740ef60d32a897c6dfbdf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "log out",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "FOODAPI eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWVmNDExNjFjYWZjOTg5ZGE4YmQ2YSIsImVtYWlsIjoiYW5hcy5yb3V0ZUBnbWFpbC5jb20iLCJuYW1lIjoidGVzdHBob25lIiwiaWF0IjoxNjg4MTYyMDI1fQ.qxLbn5n2g1MXNwAuqMx4nwlmuMbCIsSbY4j_FzHeV9E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/chef/logout",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"chef",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get chef meals",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "FOODAPI eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzJhNGY4M2ViMDkzZDZjYWYyOTUzMyIsImVtYWlsIjoiYW5hcy5yb3V0ZUBnbWFpbC5jb20iLCJuYW1lIjoiQW5hcyIsImlhdCI6MTY5MTIzMzU3N30.wIR_ZQ2ltNVDhG_p92PDHcT1bdqXYpa4SEHMBTbrq3A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/chef/get-chef/64c2a4f83eb093d6caf29533/meals",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"chef",
+								"get-chef",
+								"64c2a4f83eb093d6caf29533",
+								"meals"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "sign in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"anas.route@gmail.com\",\r\n    \"password\": \"anas123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/admin/signin",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"admin",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get meals",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "FOODAPI eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWVmNDExNjFjYWZjOTg5ZGE4YmQ2YSIsImVtYWlsIjoiYW5hcy5yb3V0ZUBnbWFpbC5jb20iLCJuYW1lIjoidGVzdHBob25lIiwiaWF0IjoxNjg4MTYyMDI1fQ.qxLbn5n2g1MXNwAuqMx4nwlmuMbCIsSbY4j_FzHeV9E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/admin/get-meals?status=all",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"admin",
+								"get-meals"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "all",
+									"description": "must be one of [pending, accepted, rejected, all]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get chefs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "FOODAPI eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWVmNDExNjFjYWZjOTg5ZGE4YmQ2YSIsImVtYWlsIjoiYW5hcy5yb3V0ZUBnbWFpbC5jb20iLCJuYW1lIjoidGVzdHBob25lIiwiaWF0IjoxNjg4MTYyMDI1fQ.qxLbn5n2g1MXNwAuqMx4nwlmuMbCIsSbY4j_FzHeV9E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/admin/get-chefs?status=pending",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"admin",
+								"get-chefs"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "pending",
+									"description": "must be one of [pending, accepted, rejected, all]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deal-with-chef-request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "FOODAPI eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWVmNDExNjFjYWZjOTg5ZGE4YmQ2YSIsImVtYWlsIjoiYW5hcy5yb3V0ZUBnbWFpbC5jb20iLCJuYW1lIjoidGVzdHBob25lIiwiaWF0IjoxNjg4MTYyMDI1fQ.qxLbn5n2g1MXNwAuqMx4nwlmuMbCIsSbY4j_FzHeV9E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/admin/deal-with-chef-request/64c2a4f83eb093d6caf29533?status=accepted",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"admin",
+								"deal-with-chef-request",
+								"64c2a4f83eb093d6caf29533"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "accepted",
+									"description": "must be one of [pending, accepted, rejected, all]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deal-with-meal-request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "FOODAPI eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWVmNDExNjFjYWZjOTg5ZGE4YmQ2YSIsImVtYWlsIjoiYW5hcy5yb3V0ZUBnbWFpbC5jb20iLCJuYW1lIjoidGVzdHBob25lIiwiaWF0IjoxNjg4MTYyMDI1fQ.qxLbn5n2g1MXNwAuqMx4nwlmuMbCIsSbY4j_FzHeV9E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/admin/deal-with-meal-request/6498e1d0517fb6d42ad331ef?status=accepted",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"admin",
+								"deal-with-meal-request",
+								"6498e1d0517fb6d42ad331ef"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "accepted",
+									"description": "must be one of [pending, accepted, rejected, all]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "log out",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "FOODAPI eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWVmNDExNjFjYWZjOTg5ZGE4YmQ2YSIsImVtYWlsIjoiYW5hcy5yb3V0ZUBnbWFpbC5jb20iLCJuYW1lIjoidGVzdHBob25lIiwiaWF0IjoxNjg4MTYyMDI1fQ.qxLbn5n2g1MXNwAuqMx4nwlmuMbCIsSbY4j_FzHeV9E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/admin/logout",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"admin",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "meal",
+			"item": [
+				{
+					"name": "add meal",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "FOODAPI eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWVmNDExNjFjYWZjOTg5ZGE4YmQ2YSIsImVtYWlsIjoiYW5hcy5yb3V0ZUBnbWFpbC5jb20iLCJuYW1lIjoidGVzdHBob25lIiwiaWF0IjoxNjg4MTYyMDI1fQ.qxLbn5n2g1MXNwAuqMx4nwlmuMbCIsSbY4j_FzHeV9E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Meat",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "hellwa",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "250",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "Beef",
+									"description": "valid('Beef', 'Chicken', 'Fish', 'Seafood', 'Pork', 'Lamb', 'Vegetarian', 'Vegan', 'Gluten-free', 'Dairy-free', 'Breakfast', 'Lunch', 'Dinner', 'Appetizers', 'Salads', 'Soups', 'Sandwiches', 'Pasta', 'Pizza', 'Rice dishes', 'Stir-fries', 'Curries', 'Desserts', 'Baked goods', 'Snacks')",
+									"type": "text"
+								},
+								{
+									"key": "mealImages",
+									"type": "file",
+									"src": "/E:/Second_Term/desktop/new/Work/Images/rigel-food-sec-2-img4-200x200.jpg"
+								},
+								{
+									"key": "howToSell",
+									"value": "number",
+									"description": "['number', 'quantity']",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/meal/add-to-menu",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"meal",
+								"add-to-menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update meal",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "FOODAPI eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWVmNDExNjFjYWZjOTg5ZGE4YmQ2YSIsImVtYWlsIjoiYW5hcy5yb3V0ZUBnbWFpbC5jb20iLCJuYW1lIjoidGVzdHBob25lIiwiaWF0IjoxNjg4MTYyMDI1fQ.qxLbn5n2g1MXNwAuqMx4nwlmuMbCIsSbY4j_FzHeV9E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Meat",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "hellwa",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "250",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "Beef",
+									"type": "text"
+								},
+								{
+									"key": "mealImages",
+									"type": "file",
+									"src": "/E:/Second_Term/desktop/new/Work/Images/bg.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/chef/update-meal/64a6e3ea0f8c2b74e0eb2d77",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"chef",
+								"update-meal",
+								"64a6e3ea0f8c2b74e0eb2d77"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete meal",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "FOODAPI eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWVmNDExNjFjYWZjOTg5ZGE4YmQ2YSIsImVtYWlsIjoiYW5hcy5yb3V0ZUBnbWFpbC5jb20iLCJuYW1lIjoidGVzdHBob25lIiwiaWF0IjoxNjg4MTYyMDI1fQ.qxLbn5n2g1MXNwAuqMx4nwlmuMbCIsSbY4j_FzHeV9E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{baseURL}}/meal/delete-meal/64ce29541643ae79d15fc123",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"meal",
+								"delete-meal",
+								"64ce29541643ae79d15fc123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all meals",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "FOODAPI eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWVmNDExNjFjYWZjOTg5ZGE4YmQ2YSIsImVtYWlsIjoiYW5hcy5yb3V0ZUBnbWFpbC5jb20iLCJuYW1lIjoidGVzdHBob25lIiwiaWF0IjoxNjg4MTYyMDI1fQ.qxLbn5n2g1MXNwAuqMx4nwlmuMbCIsSbY4j_FzHeV9E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{baseURL}}/meal/get-meals",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"meal",
+								"get-meals"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "https://food-api-omega.vercel.app/api/v1",
+			"type": "string"
+		}
+	]
+}
