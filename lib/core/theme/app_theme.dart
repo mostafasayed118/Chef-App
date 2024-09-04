@@ -2,8 +2,23 @@ import 'package:chef_app/core/utils/app_text_style.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/app_colors.dart';
-
-ThemeData getAppDarkTheme() {
+class AppFontSize {
+  static const double extraSmall = 13;
+  static const double small = 14;
+  static const double medium = 16;
+  static const double standard = 18;
+  static const double large = 24;
+  static const double extraLarge = 32;
+  static const double extraExtraLarge = 36;
+}
+class AppBorderRadius{
+  static const double small = 8;
+  static const double standard = 10;
+  static const double large = 20;
+  static const double extraLarge = 30;
+  static const double extraExtraLarge = 40;
+}
+ThemeData getAppLightTheme() {
   return ThemeData(
     primaryColor: AppColors.primaryColor,
     //scaffoldBackgroundColor
@@ -15,28 +30,28 @@ ThemeData getAppDarkTheme() {
     ),
     //text theme
     textTheme: TextTheme(
-      displayLarge: boldStyle(color: AppColors.black, fontSize: 32),
-      displayMedium: semiBold(color: AppColors.black, fontSize: 24),
-      displaySmall: regularStyle(color: AppColors.black, fontSize: 16),
+      displayLarge: boldStyle(color: AppColors.black, fontSize: AppFontSize.extraLarge),
+      displayMedium: semiBold(color: AppColors.black, fontSize: AppFontSize.large),
+      displaySmall: regularStyle(color: AppColors.black, fontSize: AppFontSize.medium),
     ),
     //button theme
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primaryColor,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(AppBorderRadius.small),
         ),
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
         //enabled border
         enabledBorder:
-            OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
-        //fouced border
+            OutlineInputBorder(borderRadius: BorderRadius.circular(AppBorderRadius.small)),
+        //focused border
         focusedBorder:
-            OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+            OutlineInputBorder(borderRadius: BorderRadius.circular(AppBorderRadius.small)),
         //hint
-        hintStyle: regularStyle(color: AppColors.greyTextFiled, fontSize: 16)),
+        hintStyle: regularStyle(color: AppColors.greyTextFiled, fontSize: AppFontSize.medium),),
     //fill color
     // fillColor: AppColors.lightBlack,
     // filled: true,

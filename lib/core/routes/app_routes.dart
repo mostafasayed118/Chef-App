@@ -4,13 +4,14 @@ import 'package:chef_app/feature/auth/presentation/screens/send_code_screen.dart
 import 'package:chef_app/feature/auth/presentation/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../feature/auth/presentation/screens/reset_password_screen.dart';
-import '../feature/menu/presentation/screens/add_meal_screen.dart';
-import '../feature/menu/presentation/screens/menu_home_screen.dart';
-import '../feature/profile/presentation/screens/change_password_screen.dart';
-import '../feature/profile/presentation/screens/profile_home_screen.dart';
-import '../feature/profile/presentation/screens/settings_screen.dart';
-import '../feature/profile/presentation/screens/update_profile_screen.dart';
+import '../../feature/auth/presentation/screens/reset_password_screen.dart';
+import '../../feature/menu/presentation/screens/add_meal_screen.dart';
+import '../../feature/menu/presentation/screens/menu_home_screen.dart';
+import '../../feature/profile/presentation/screens/change_password_screen.dart';
+import '../../feature/profile/presentation/screens/profile_home_screen.dart';
+import '../../feature/profile/presentation/screens/settings_screen.dart';
+import '../../feature/profile/presentation/screens/update_profile_screen.dart';
+import '../widgets/under_maintenance_widget.dart';
 
 class Routes {
   static const String initialRoute = '/';
@@ -58,12 +59,7 @@ class AppRoutes {
         return MaterialPageRoute(builder: (context) => const SettingsScreen());
       default:
         return MaterialPageRoute(
-          builder: (context) => Scaffold(
-            body: Center(
-              child: Text('No route defined for ${routeSettings.name}'),
-            ),
-          ),
-        );
+            builder: (context) => const UnderMaintenanceScreen());
     }
   }
 }

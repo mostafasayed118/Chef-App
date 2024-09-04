@@ -11,7 +11,7 @@ TextStyle _textStyle(
     fontWeight: fontWeight,
   );
 }
-
+//! Bold style
 TextStyle boldStyle({
   required Color color,
   required double fontSize,
@@ -22,6 +22,8 @@ TextStyle boldStyle({
       fontWeight: FontWeight.bold,
     );
 
+//! Semi Bold style
+
 TextStyle semiBold({
   required Color color,
   required double fontSize,
@@ -31,6 +33,8 @@ TextStyle semiBold({
       fontSize: fontSize,
       fontWeight: FontWeight.w600,
     );
+
+//! Regular style
 
 TextStyle regularStyle({
   required Color color,
