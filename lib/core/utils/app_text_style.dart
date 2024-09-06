@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 TextStyle _textStyle(
@@ -7,7 +8,7 @@ TextStyle _textStyle(
     required FontWeight fontWeight}) {
   return GoogleFonts.lato(
     color: color,
-    fontSize: fontSize,
+    fontSize: fontSize.sp,
     fontWeight: fontWeight,
   );
 }

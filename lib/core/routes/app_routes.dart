@@ -12,7 +12,7 @@ import '../../feature/profile/presentation/screens/profile_home_screen.dart';
 import '../../feature/profile/presentation/screens/settings_screen.dart';
 import '../../feature/profile/presentation/screens/update_profile_screen.dart';
 import '../widgets/under_maintenance_widget.dart';
-
+//! Routes Path
 class Routes {
   static const String initialRoute = '/';
   static const String changeLanguage = '/changeLanguage';
@@ -27,6 +27,7 @@ class Routes {
   static const String settings = '/settings';
 }
 
+//! Generate Routes
 class AppRoutes {
   static Route? generateRoutes(RouteSettings routeSettings) {
     switch (routeSettings.name) {

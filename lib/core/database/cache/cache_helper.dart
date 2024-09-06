@@ -68,18 +68,18 @@ class CacheHelper {
     }
   }
 
-  // final String _cachedCode = "cachedCode";
+  final String _cachedCode = "cachedCode";
 
-  // String getCachedLanguage() {
-  //   final code = sharedPreferences.getString(_cachedCode);
-  //   if (code != null) {
-  //     return code;
-  //   } else {
-  //     return 'ar';
-  //   }
-  // }
+  String getCachedLanguage() {
+    final code = sharedPreferences.getString(_cachedCode);
+    if (code != null) {
+      return code;
+    } else {
+      return 'en';
+    }
+  }
 
-  // Future<void> cacheLanguage(String code) async {
-  //   await sharedPreferences.setString(_cachedCode, code);
-  // }
+  Future<void> cacheLanguage(String code) async {
+    await sharedPreferences.setString(_cachedCode, code);
+  }
 }
