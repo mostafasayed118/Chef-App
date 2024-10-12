@@ -23,48 +23,67 @@ class AppBorderRadius {
 
 ThemeData getAppLightTheme() {
   return ThemeData(
-    primaryColor: AppColors.primaryColor,
-    //! scaffoldBackgroundColor
-    scaffoldBackgroundColor: AppColors.white,
-    //! appBar theme
-    appBarTheme: const AppBarTheme(
-      backgroundColor: AppColors.primaryColor,
-      centerTitle: true,
-    ),
-    //! text theme
-    textTheme: TextTheme(
-      displayLarge:
-          boldStyle(color: AppColors.white, fontSize: AppFontSize.extraLarge),
-      displayMedium:
-          semiBold(color: AppColors.black, fontSize: AppFontSize.large),
-      displaySmall:
-          regularStyle(color: AppColors.black, fontSize: AppFontSize.medium),
-    ),
-    //! button theme
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
+      primaryColor: AppColors.primaryColor,
+      //! scaffoldBackgroundColor
+      scaffoldBackgroundColor: AppColors.white,
+      //! appBar theme
+      appBarTheme: const AppBarTheme(
         backgroundColor: AppColors.primaryColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppBorderRadius.small),
+        centerTitle: true,
+      ),
+      //! text theme
+      textTheme: TextTheme(
+        displayLarge:
+            boldStyle(color: AppColors.white, fontSize: AppFontSize.extraLarge),
+        displayMedium:
+            semiBold(color: AppColors.black, fontSize: AppFontSize.large),
+        displaySmall:
+            regularStyle(color: AppColors.black, fontSize: AppFontSize.medium),
+      ),
+      //! button theme
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColors.primaryColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(AppBorderRadius.small),
+          ),
         ),
       ),
-    ),
-    //! Text form field theme
-    inputDecorationTheme: InputDecorationTheme(
-      //enabled border
-      enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(AppBorderRadius.small)),
-      //focused border
-      focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(AppBorderRadius.small)),
-      //hint
-      hintStyle: regularStyle(
-          color: AppColors.greyTextFiled, fontSize: AppFontSize.medium),
-    ),
-    //fill color
-    // fillColor: AppColors.lightBlack,
-    // filled: true,
-  );
+      //! Text form field theme
+      inputDecorationTheme: InputDecorationTheme(
+        //enabled border
+        enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(AppBorderRadius.small)),
+        //focused border
+        focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(AppBorderRadius.small)),
+        errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(AppBorderRadius.small)),
+        errorStyle: regularStyle(
+            color: AppColors.red, fontSize: AppFontSize.extraSmall),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: AppColors.red),
+          borderRadius: BorderRadius.circular(AppBorderRadius.small),
+        ),
+        //hint
+        hintStyle: regularStyle(
+            color: AppColors.greyTextFiled, fontSize: AppFontSize.medium),
+        labelStyle: regularStyle(
+            color: AppColors.blackBottom, fontSize: AppFontSize.medium),
+      ),
+
+      //fill color
+      // fillColor: AppColors.lightBlack,
+      // filled: true,
+
+      //! TextButton theme
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          textStyle: regularStyle(
+              color: AppColors.blackBottom, fontSize: AppFontSize.large),
+        ),
+      ),
+      tabBarTheme: const TabBarTheme());
 }
 
 // ThemeData getAppTheme() {

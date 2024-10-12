@@ -1,3 +1,4 @@
+import 'package:chef_app/core/common/commons.dart';
 import 'package:chef_app/core/locale/app_locale.dart';
 import 'package:chef_app/core/utils/app_colors.dart';
 import 'package:chef_app/core/utils/app_strings.dart';
@@ -6,10 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/bloc/cubit/global_cubit.dart';
-import '../../../../core/bloc/cubit/global_state.dart';
-import '../../../../core/utils/app_assets.dart';
-import '../../../../core/widgets/custom_image.dart';
+import '../../../../../core/bloc/cubit/global_cubit.dart';
+import '../../../../../core/bloc/cubit/global_state.dart';
+import '../../../../../core/routes/app_routes.dart';
+import '../../../../../core/utils/app_assets.dart';
+import '../../../../../core/widgets/custom_image.dart';
 
 class ChangeLanguageScreen extends StatelessWidget {
   const ChangeLanguageScreen({super.key});
@@ -79,6 +81,18 @@ class ChangeLanguageScreen extends StatelessWidget {
                       ],
                     );
                   },
+                ),
+                SizedBox(height: 100.h),
+                //! Skip Button
+                CustomButton(
+                  width: 200.w,
+                  height: 50.h,
+                  onPressed: () {
+                    navigatePushNamedAndRemoveUntil(
+                        context: context, routeName: Routes.signin);
+                  },
+                  text: AppStrings.getStartedButton.tr(context),
+                  backgroundColor: AppColors.blackBottom,
                 ),
               ],
             ),

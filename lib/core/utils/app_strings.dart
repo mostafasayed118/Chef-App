@@ -4,11 +4,15 @@ class AppStrings {
   static const String onboardingTitle = 'onboardingTitle';
   static const String onboardingSubTitle = 'onboardingSubTitle';
 
-  //!-------------------------Login strings---------------------------
+  //!-------------------------SignIn strings---------------------------
   static const String forgotPassword = 'forgotPassword';
   static const String dontHaveAccount = 'dontHaveAccount';
   static const String welcomeBack = 'welcomeBack';
-
+  static const String signIn = 'signin';
+//!---------------------------SignUp Strings-----------------------------------
+  static const String signUp = 'signup';
+  static const String haveAccount = 'haveAccount';
+  
   //!-------------------------Reset Password strings---------------------------
   static const String resetPasswordTitle = 'resetPasswordTitle';
   static const String resetPasswordSubTitle = 'resetPasswordSubTitle';
@@ -44,6 +48,7 @@ class AppStrings {
   static const String settingsButton = 'settingsButton';
   static const String englishButton = 'English';
   static const String arabicButton = 'العربية';
+  static const String getStartedButton = 'getStartedButton';
 
   //!-------------------------Hints strings---------------------------
   static const String emailHint = 'emailHint';
@@ -58,4 +63,18 @@ class AppStrings {
   static const String minChargeHint = 'minChargeHint';
   static const String descriptionHint = 'descriptionHint';
   static const String locationHint = 'locationHint';
+
+  //! -------------------------Errors strings---------------------------
+  static const String codeError = 'codeError';
+  static const String emailError = 'emailError';
+  static const String passwordError = 'passwordError';
+  static const String confirmPasswordError = 'confirmPasswordError';
+  static const String nameError = 'nameError';
+  static const String phoneNumberError = 'phoneNumberError';
+  static const String brandNameError = 'brandNameError';
+  static const String minChargeError = 'minChargeError';
+  static const String descriptionError = 'descriptionError';
+  static const String locationError = 'locationError';
+  static const String imageError = 'imageError';
+  static const String oldPasswordError = 'oldPasswordError';
 }

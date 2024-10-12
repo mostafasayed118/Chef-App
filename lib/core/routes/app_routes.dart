@@ -1,10 +1,11 @@
-import 'package:chef_app/feature/auth/presentation/screens/change_language_screen.dart';
-import 'package:chef_app/feature/auth/presentation/screens/login_screen.dart';
-import 'package:chef_app/feature/auth/presentation/screens/send_code_screen.dart';
-import 'package:chef_app/feature/auth/presentation/screens/splash_screen.dart';
+import 'package:chef_app/feature/auth/presentation/screens/change_language/change_language_screen.dart';
+import 'package:chef_app/feature/auth/presentation/screens/send_code/send_code_screen.dart';
+import 'package:chef_app/feature/auth/presentation/screens/sign_in/sign_in_screen.dart';
+import 'package:chef_app/feature/auth/presentation/screens/sign_up/sign_up_screen.dart';
+import 'package:chef_app/feature/auth/presentation/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../../feature/auth/presentation/screens/reset_password_screen.dart';
+import '../../feature/auth/presentation/screens/reset_password/reset_password_screen.dart';
 import '../../feature/menu/presentation/screens/add_meal_screen.dart';
 import '../../feature/menu/presentation/screens/menu_home_screen.dart';
 import '../../feature/profile/presentation/screens/change_password_screen.dart';
@@ -12,11 +13,13 @@ import '../../feature/profile/presentation/screens/profile_home_screen.dart';
 import '../../feature/profile/presentation/screens/settings_screen.dart';
 import '../../feature/profile/presentation/screens/update_profile_screen.dart';
 import '../widgets/under_maintenance_widget.dart';
+
 //! Routes Path
 class Routes {
   static const String initialRoute = '/';
   static const String changeLanguage = '/changeLanguage';
-  static const String login = '/login';
+  static const String signin = '/signin';
+  static const String signup = '/signup';
   static const String sendCode = '/sendCode';
   static const String resetPassword = '/resetPassword';
   static const String menuHome = '/menuHome';
@@ -36,8 +39,10 @@ class AppRoutes {
       case Routes.changeLanguage:
         return MaterialPageRoute(
             builder: (context) => const ChangeLanguageScreen());
-      case Routes.login:
-        return MaterialPageRoute(builder: (context) => const LoginScreen());
+      case Routes.signin:
+        return MaterialPageRoute(builder: (context) => SignInScreen());
+      case Routes.signup:
+        return MaterialPageRoute(builder: (context) => SignUpScreen());
       case Routes.sendCode:
         return MaterialPageRoute(builder: (context) => const SendCodeScreen());
       case Routes.resetPassword:
