@@ -1,6 +1,7 @@
 import 'package:chef_app/core/locale/app_locale.dart';
 import 'package:chef_app/core/widgets/custom_button.dart';
 import 'package:chef_app/core/widgets/custom_textField_button.dart';
+import 'package:chef_app/feature/auth/presentation/cubits/login_cubit/login_state.dart';
 import 'package:chef_app/feature/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -64,7 +65,7 @@ class SignUpScreen extends StatelessWidget {
 
               BlocConsumer<SignUpCubit, SignupState>(
                 listener: (context, state) {
-                  // TODO: implement listener
+                 
                 },
                 builder: (context, state) {
                   return Padding(

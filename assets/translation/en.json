@@ -46,6 +46,7 @@
   "descriptionHint": "Description",
   "locationHint": "Location"
   ,
+  "loginSuccess": "Login Success",
   "emailError": "Email is not correct",
   "passwordError": "Password is not correct",
   "confirmPasswordError": "Confirm Password is not correct",

@@ -11,7 +11,7 @@ class AuthRepository {
     try {
       final response = await sl<ApiConsumer>().post(
         EndPointsAPI.signInChef,
-        body: {APIKeys.email: email, APIKeys.password: password},
+        data: {APIKeys.email: email, APIKeys.password: password},
       );
       return Right(
         LoginModel.fromJson(response),

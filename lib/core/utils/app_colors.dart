@@ -12,4 +12,5 @@ class AppColors {
   static const Color greyTextFiled = Color(0xff9D9FA0);
   static const Color greyForget = Color(0xffB5B7B8);
   static const Color greyBlue = Color(0xff7D8FAB);
+  static const Color green = Colors.green;
 }

@@ -47,6 +47,9 @@
   "minChargeHint": "الحد الأدنى للرسوم",
   "descriptionHint": "الوصف",
   "locationHint": "الموقع",
+
+    "loginSuccess": "تم تسجيل الدخول بنجاح",
+
    "emailError": "البريد الإلكتروني غير صحيح",
   "passwordError": "كلمة المرور غير صحيحة",
   "confirmPasswordError": "كلمة المرور غير متطابقة",

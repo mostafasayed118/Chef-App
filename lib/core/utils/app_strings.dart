@@ -9,6 +9,7 @@ class AppStrings {
   static const String dontHaveAccount = 'dontHaveAccount';
   static const String welcomeBack = 'welcomeBack';
   static const String signIn = 'signin';
+  static const String loginSuccess = 'loginSuccess';
 //!---------------------------SignUp Strings-----------------------------------
   static const String signUp = 'signup';
   static const String haveAccount = 'haveAccount';

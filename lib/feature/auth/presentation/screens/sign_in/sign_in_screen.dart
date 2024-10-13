@@ -13,6 +13,7 @@ import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_strings.dart';
 import '../../../../../core/widgets/custom_image.dart';
+import '../../../../../core/widgets/custom_loading_indicator.dart';
 import '../../../../../core/widgets/custom_text_button.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -58,7 +59,14 @@ class SignInScreen extends StatelessWidget {
 
               BlocConsumer<SignInCubit, SignInState>(
                 listener: (context, state) {
-                  // TODO: implement listener
+                  if (state is LoginSuccessState) {
+                    showToast(
+                        message: AppStrings.loginSuccess.tr(context),
+                        state: ToastStates.success);
+                  }
+                  if (state is LoginErrorState) {
+                    showToast(message: state.message, state: ToastStates.error);
+                  }
                 },
                 builder: (context, state) {
                   return Padding(
@@ -130,12 +138,18 @@ class SignInScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 12.h),
                           //! login button
-                          CustomButton(
-                            text: AppStrings.signInButton.tr(context),
-                            onPressed: () {
-                              if (_signinFormKey.currentState!.validate()) {}
-                            },
-                          ),
+                          state is LoginLoadingState
+                              ? const CustomLoadingIndicator()
+                              : CustomButton(
+                                  text: AppStrings.signInButton.tr(context),
+                                  onPressed: () {
+                                    if (_signinFormKey.currentState!
+                                        .validate()) {
+                                      BlocProvider.of<SignInCubit>(context)
+                                          .loginMethod();
+                                    }
+                                  },
+                                ),
                           SizedBox(height: 72.h),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,

@@ -7,7 +7,7 @@ class LoginModel {
 
   factory LoginModel.fromJson(Map<String, dynamic> jsonData) {
     return LoginModel(
-      message: jsonData[APIKeys.email],
+      message: jsonData[APIKeys.message],
       token: jsonData[APIKeys.token],
     );
   }
