@@ -5,9 +5,10 @@
   "forgotPassword": "نسيت كلمة المرور؟",
   "dontHaveAccount": "ليس لديك حساب؟",
   "welcomeBack": "مرحبًا بعودتك",
+  "forgotPasswordTitle":"نسيت كلمة المرور",
   "resetPasswordTitle": "أدخل بريدك الإلكتروني وسنرسل لك رمزًا لإعادة تعيين كلمة المرور",
   "resetPasswordSubTitle": "الرجاء إدخال بريدك الإلكتروني",
-  "resetPasswordSubTitle2": "سنرسل لك بريدًا إلكترونيًا يحتوي على رابط إعادة تعيين كلمة المرور",
+   "checkEmail":" الرجاء التحقق من بريدك الالكتروني",
   "createNewPassword": "إنشاء كلمة مرور جديدة",
   "signUpTitle": "إنشاء حسابك",
   "signUpSubTitle": "الرجاء إدخال بياناتك",
@@ -49,6 +50,8 @@
   "locationHint": "الموقع",
 
     "loginSuccess": "تم تسجيل الدخول بنجاح",
+  "resetPasswordSuccess" : "تم تغيير كلمة المرور بنجاح",
+  "resetPasswordError": "حدث خطأ اثناء تغيير كلمة المرور",
 
    "emailError": "البريد الإلكتروني غير صحيح",
   "passwordError": "كلمة المرور غير صحيحة",

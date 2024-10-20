@@ -8,6 +8,7 @@
   "resetPasswordTitle": "Enter Your mail and we will send you code to rest your password",
   "resetPasswordSubTitle": "Please enter your email",
   "resetPasswordSubTitle2": "We will send you email with password reset link",
+  "checkEmail":"Check your email",
   "createNewPassword": "Create New Password",
   "signUpTitle": "Create your account",
   "signUpSubTitle": "Please enter your details",
@@ -26,6 +27,8 @@
   "signUpButton": "Sign Up",
   "signin":"Sign In",
   "signup":"Please fill in the form below to Sign Up",
+    "forgotPasswordTitle":"Forgot Password",
+
   "sendCodeButton": "Send code",
   "resetPasswordButton": "Reset Password",
   "changeLanguageButton": "Change Language",
@@ -47,6 +50,8 @@
   "locationHint": "Location"
   ,
   "loginSuccess": "Login Success",
+  "resetPasswordSuccess" : "Reset Password Success",
+  "resetPasswordError": "Reset Password Error",
   "emailError": "Email is not correct",
   "passwordError": "Password is not correct",
   "confirmPasswordError": "Confirm Password is not correct",

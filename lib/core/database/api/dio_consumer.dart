@@ -140,6 +140,18 @@ class DioConsumer extends ApiConsumer {
           case 409: //conflict
             throw ConflictException(ErrorModel.fromJson(e.response!.data));
 
+          case 500: //internal server error
+            throw ServerException(ErrorModel.fromJson(e.response!.data));
+
+          case 502: //bad gateway
+            throw BadRequestException(ErrorModel.fromJson(e.response!.data));
+
+          case 503: //service unavailable
+            throw BadRequestException(ErrorModel.fromJson(e.response!.data));
+
+          case 504: //gateway timeout
+            throw BadRequestException(ErrorModel.fromJson(e.response!.data));
+
           // print(e.response);
         }
       case DioExceptionType.cancel:

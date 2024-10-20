@@ -13,12 +13,15 @@ class AppStrings {
 //!---------------------------SignUp Strings-----------------------------------
   static const String signUp = 'signup';
   static const String haveAccount = 'haveAccount';
-  
+
   //!-------------------------Reset Password strings---------------------------
   static const String resetPasswordTitle = 'resetPasswordTitle';
   static const String resetPasswordSubTitle = 'resetPasswordSubTitle';
-  static const String resetPasswordSubTitle2 = 'resetPasswordSubTitle2';
+static const String checkEmail = 'checkEmail';
   static const String createNewPassword = 'createNewPassword';
+  static const String forgotPasswordTitle = 'forgotPasswordTitle';
+  static const String resetPasswordSuccess = 'resetPasswordSuccess';  
+  static const String resetPasswordError = 'resetPasswordError';
 
   //!-------------------------Sign Up strings---------------------------
   static const String signUpTitle = 'signUpTitle';

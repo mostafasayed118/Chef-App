@@ -8,6 +8,8 @@ import 'package:chef_app/feature/auth/presentation/cubits/signup_cubit/signup_cu
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
+import '../../feature/auth/presentation/cubits/forgot_password_cubit/forgot_password_cubit.dart';
+
 final sl = GetIt.instance;
 
 void initServiceLocator() {
@@ -17,6 +19,11 @@ void initServiceLocator() {
   sl.registerLazySingleton(() => SignInCubit(sl()));
   //! SignUpCubit
   sl.registerLazySingleton(() => SignUpCubit());
+  //! ForgotPasswordCubit
+  sl.registerLazySingleton(() => ForgotPasswordCubit(sl()));
+ 
+  //! -------------------------------------------------------------------
+
   //! Database Caches
   sl.registerLazySingleton(() => CacheHelper());
   //! auth Feature

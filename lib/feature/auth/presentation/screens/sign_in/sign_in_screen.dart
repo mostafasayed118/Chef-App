@@ -1,6 +1,7 @@
 import 'package:chef_app/core/common/commons.dart';
 import 'package:chef_app/core/locale/app_locale.dart';
 import 'package:chef_app/core/routes/app_routes.dart';
+import 'package:chef_app/core/validator/validators.dart';
 import 'package:chef_app/core/widgets/custom_button.dart';
 import 'package:chef_app/core/widgets/custom_textField_button.dart';
 import 'package:chef_app/feature/auth/presentation/cubits/login_cubit/login_cubit.dart';
@@ -17,9 +18,9 @@ import '../../../../../core/widgets/custom_loading_indicator.dart';
 import '../../../../../core/widgets/custom_text_button.dart';
 
 class SignInScreen extends StatelessWidget {
-  final GlobalKey<FormState> _signinFormKey = GlobalKey<FormState>();
-
   SignInScreen({super.key});
+
+  final GlobalKey<FormState> _signinFormKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -79,24 +80,21 @@ class SignInScreen extends StatelessWidget {
                           SizedBox(height: 55.h),
                           //! email field
                           CustomTextFormField(
-                            controller: BlocProvider.of<SignInCubit>(context)
-                                .emailController,
-                            backgroundColor: AppColors.primaryColor,
-                            width: 327.w,
-                            height: 48.h,
-                            onPressed: () {},
-                            labelText: AppStrings.emailHint.tr(context),
-                            hintText: AppStrings.emailHint.tr(context),
-                            icon: Icons.email,
-                            onPressedIcon: () {},
-                            keyboardType: TextInputType.emailAddress,
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return AppStrings.emailError.tr(context);
-                              }
-                              return null;
-                            },
-                          ),
+                              controller: BlocProvider.of<SignInCubit>(context)
+                                  .emailController,
+                              backgroundColor: AppColors.primaryColor,
+                              width: 327.w,
+                              height: 48.h,
+                              onPressed: () {},
+                              labelText: AppStrings.emailHint.tr(context),
+                              hintText: AppStrings.emailHint.tr(context),
+                              icon: Icons.email,
+                              onPressedIcon: () {},
+                              keyboardType: TextInputType.emailAddress,
+                              validator: (value) {
+                                Validators.validateEmail(value, context);
+                                return null;
+                              }),
                           SizedBox(height: 32.h),
                           //! password field
                           CustomTextFormField(
@@ -110,12 +108,8 @@ class SignInScreen extends StatelessWidget {
                             labelText: AppStrings.passwordHint.tr(context),
                             hintText: AppStrings.passwordHint.tr(context),
                             validator: (value) {
-                              if (value!.isEmpty) {
-                                return AppStrings.passwordError.tr(context);
-                              }
-                              if (value.length < 6) {
-                                return AppStrings.passwordError.tr(context);
-                              }
+                              Validators.validatePassword(value, context);
+
                               return null;
                             },
                             icon: BlocProvider.of<SignInCubit>(context)
@@ -132,7 +126,11 @@ class SignInScreen extends StatelessWidget {
                             children: [
                               CustomTextButton(
                                 text: AppStrings.forgotPassword.tr(context),
-                                onPressed: () {},
+                                onPressed: () {
+                                  navigatePushNamed(
+                                      context: context,
+                                      routeName: Routes.sendCode);
+                                },
                               ),
                             ],
                           ),

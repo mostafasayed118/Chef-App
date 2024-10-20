@@ -20,4 +20,37 @@ class AuthRepository {
       return left(error.errorModel.errorMessage);
     }
   }
+
+  Future<Either<String, String>> sendCode(String email) async {
+    try {
+      final response = await sl<ApiConsumer>().post(
+        EndPointsAPI.sendCodeChef,
+        data: {APIKeys.email: email},
+      );
+      return Right(response[APIKeys.message]);
+    } on ServerException catch (error) {
+      return left(error.errorModel.errorMessage);
+    }
+  }
+
+  Future<Either<String, String>> resetPassword(
+      {required String email,
+      required String password,
+      required String confirmPassword,
+      required String code}) async {
+    try {
+      final response = await sl<ApiConsumer>().patch(
+        EndPointsAPI.changeForgottenPasswordChef,
+        data: {
+          APIKeys.email: email,
+          APIKeys.password: password,
+          APIKeys.confirmPassword: confirmPassword,
+          APIKeys.code: code,
+        },
+      );
+      return Right(response[APIKeys.message]);
+    } on ServerException catch (error) {
+      return left(error.errorModel.errorMessage);
+    }
+  }
 }

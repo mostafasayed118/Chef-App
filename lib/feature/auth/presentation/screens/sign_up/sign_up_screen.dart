@@ -1,7 +1,6 @@
 import 'package:chef_app/core/locale/app_locale.dart';
 import 'package:chef_app/core/widgets/custom_button.dart';
 import 'package:chef_app/core/widgets/custom_textField_button.dart';
-import 'package:chef_app/feature/auth/presentation/cubits/login_cubit/login_state.dart';
 import 'package:chef_app/feature/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -64,9 +63,7 @@ class SignUpScreen extends StatelessWidget {
               ),
 
               BlocConsumer<SignUpCubit, SignupState>(
-                listener: (context, state) {
-                 
-                },
+                listener: (context, state) {},
                 builder: (context, state) {
                   return Padding(
                     padding: const EdgeInsets.all(24.0),
@@ -137,12 +134,10 @@ class SignUpScreen extends StatelessWidget {
                             onPressedIcon: () {},
                             keyboardType: TextInputType.emailAddress,
                             validator: (value) {
-                              if (value!.isEmpty) {
+                              if (value!.isEmpty || !value.contains("@")) {
                                 return AppStrings.emailError.tr(context);
                               }
-                              if (value.length < 6) {
-                                return 'Enter here message';
-                              }
+
                               return null;
                             },
                           ),
